@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Flovvnetic.io | AI Chatbots & Web Development</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: #000000;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #00ff88;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00ff88;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #00ff88;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Hero Section */
+        .services-hero {
+            text-align: center;
+            padding: 5rem 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 3rem;
+        }
+        
+        .services-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+        
+        .services-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #e0e0e0;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 4rem 0;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #00ff88;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: #00ff88;
+        }
+        
+        h4 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.5rem;
+            color: #00cc6a;
+        }
+        
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border-left: 4px solid #00ff88;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.1);
+        }
+        
+        .service-card-header {
+            padding: 1.5rem;
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #333;
+        }
+        
+        .service-card-body {
+            padding: 1.5rem;
+        }
+        
+        .service-card-footer {
+            padding: 1.5rem;
+            background-color: #1a1a1a;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-list {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #00ff88;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #00ff88;
+            color: #121212;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: 2px solid #00ff88;
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: #00ff88;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            background-color: #1e1e1e;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 3px solid #00ff88;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #00ff88;
+            color: #121212;
+            border-radius: 50%;
+            font-weight: bold;
+            line-height: 40px;
+            margin-bottom: 1rem;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 5rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #333;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.2rem;
+            background-color: #1a1a1a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+        
+        .faq-question:hover {
+            background-color: #1e1e1e;
+        }
+        
+        .faq-answer {
+            padding: 1.2rem;
+            background-color: #1e1e1e;
+            display: none;
+        }
+        
+        .faq-toggle {
+            color: #00ff88;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #000000;
+            margin-top: 3rem;
+            border-top: 2px solid #00ff88;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #00ff88;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .service-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-step {
+                max-width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Flovvnetic.io</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="blog.html">Blog</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="services-hero">
+            <h1>Our Premium Services</h1>
+            <p>We combine cutting-edge AI technology with stunning web design to create solutions that drive real business results.</p>
+        </section>
+
+        <section class="services-section">
+            <h2>AI Chatbot Solutions</h2>
+            
+            <div class="service-cards">
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Custom AI Chatbots</h3>
+                    </div>
+                    <div class="service-card-body">
+                        <p>Intelligent chatbots tailored to your specific business needs, powered by natural language processing and machine learning.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul class="feature-list">
+                            <li>24/7 automated customer support</li>
+                            <li>Natural language understanding</li>
+                            <li>Multi-platform deployment</li>
+                            <li>Continuous learning capabilities</li>
+                            <li>Seamless human handoff</li>
+                        </ul>
+                        
+                        <h4>Business Benefits:</h4>
+                        <ul class="feature-list">
+                            <li>Reduce support costs by up to 30%</li>
+                            <li>Improve response times to under 5 seconds</li>
+                            <li>Handle unlimited concurrent conversations</li>
+                            <li>Increase customer satisfaction scores</li>
+                        </ul>
+                    </div>
+                    <div class="service-card-footer">
+                        <a href="https://flownetic.github.io/flovvnetic_contact/" class="cta-button">Get Your Chatbot</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Customer Support Automation</h3>
+                    </div>
+                    <div class="service-card-body">
+                        <p>Transform your customer service with AI-powered automation that handles common inquiries while maintaining your brand voice.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul class="feature-list">
+                            <li>FAQ automation</li>
+                            <li>Troubleshooting guides</li>
+                            <li>Ticket creation and tracking</li>
+                            <li>Sentiment analysis</li>
+                            <li>Integration with helpdesk systems</li>
+                        </ul>
+                        
+                        <h4>Business Benefits:</h4>
+                        <ul class="feature-list">
+                            <li>Handle 60-80% of support inquiries automatically</li>
+                            <li>Reduce average handling time</li>
+                            <li>Provide consistent responses</li>
+                            <li>Scale support without adding staff</li>
+                        </ul>
+                    </div>
+                    <div class="service-card-footer">
+                        <a href="https://flownetic.github.io/flovvnetic_contact/" class="cta-button">Automate Support</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-commerce Assistants</h3>
+                    </div>
+                    <div class="service-card-body">
+                        <p>AI shopping assistants that guide customers, recommend products, and complete purchases directly in chat.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul class="feature-list">
+                            <li>Product recommendations</li>
+                            <li>Cart management</li>
+                            <li>Order status updates</li>
+                            <li>Returns processing</li>
+                            <li>Upsell/cross-sell capabilities</li>
+                        </ul>
+                        
+                        <h4>Business Benefits:</h4>
+                        <ul class="feature-list">
+                            <li>Increase average order value by 15-30%</li>
+                            <li>Reduce cart abandonment</li>
+                            <li>Provide personalized shopping experiences</li>
+                            <li>Available 24/7 without staffing costs</li>
+                        </ul>
+                    </div>
+                    <div class="service-card-footer">
+                        <a href="https://flownetic.github.io/flovvnetic_contact/" class="cta-button">Boost Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <h2>Web Development Services</h2>
+            
+            <div class="service-cards">
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Custom Website Development</h3>
+                    </div>
+                    <div class="service-card-body">
+                        <p>Bespoke websites designed to convert visitors into customers, built for performance and user experience.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul class="feature-list">
+                            <li>Fully responsive design</li>
+                            <li>SEO-optimized structure</li>
+                            <li>Lightning-fast load times</li>
+                            <li>Conversion-focused UX</li>
+                            <li>Content management system</li>
+                        </ul>
+                        
+                        <h4>Business Benefits:</h4>
+                        <ul class="feature-list">
+                            <li>Professional online presence</li>
+                            <li>Higher search engine rankings</li>
+                            <li>Improved conversion rates</li>
+                            <li>Easy content updates</li>
+                        </ul>
+                    </div>
+                    <div class="service-card-footer">
+                        <a href="https://flownetic.github.io/flovvnetic_contact/" class="cta-button">Build Your Site</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3>E-commerce Solutions</h3>
+                    </div>
+                    <div class="service-card-body">
+                        <p>Powerful online stores with seamless checkout experiences and integrated business tools.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul class="feature-list">
+                            <li>Product catalog management</li>
+                            <li>Secure payment processing</li>
+                            <li>Inventory tracking</li>
+                            <li>Shipping integration</li>
+                            <li>Marketing tools</li>
+                        </ul>
+                        
+                        <h4>Business Benefits:</h4>
+                        <ul class="feature-list">
+                            <li>Sell products 24/7 worldwide</li>
+                            <li>Reduce operational costs</li>
+                            <li>Scale during peak periods</li>
+                            <li>Detailed sales analytics</li>
+                        </ul>
+                    </div>
+                    <div class="service-card-footer">
+                        <a href="https://flownetic.github.io/flovvnetic_contact/" class="cta-button">Start Selling</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Web App Development</h3>
+                    </div>
+                    <div class="service-card-body">
+                        <p>Custom web applications that streamline business processes and enhance productivity.</p>
+                        
+                        <h4>Key Features:</h4>
+                        <ul class="feature-list">
+                            <li>Custom functionality</li>
+                            <li>User authentication</li>
+                            <li>Database integration</li>
+                            <li>API connections</li>
+                            <li>Real-time updates</li>
+                        </ul>
+                        
+                        <h4>Business Benefits:</h4>
+                        <ul class="feature-list">
+                            <li>Automate manual processes</li>
+                            <li>Improve team collaboration</li>
+                            <li>Access from any device</li>
+                            <li>No installation required</li>
+                        </ul>
+                    </div>
+                    <div class="service-card-footer">
+                        <a href="https://flownetic.github.io/flovvnetic_contact/" class="cta-button">Build Your App</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <h2>Our Development Process</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">We follow a proven methodology to ensure your project's success from concept to launch and beyond.</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Discovery</h4>
+                    <p>We learn about your business, goals, and requirements to create a detailed project plan.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Design</h4>
+                    <p>Our designers create wireframes and prototypes for your review and feedback.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Development</h4>
+                    <p>We build your solution using agile methodology with regular progress updates.</p>
+                </div>
+                
+                                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Testing</h4>
+                    <p>Rigorous quality assurance ensures everything works perfectly before launch. We conduct:</p>
+                    <ul class="feature-list" style="margin-top: 0.5rem;">
+                        <li>Functional testing of all features</li>
+                        <li>Cross-browser and device testing</li>
+                        <li>Performance and load testing</li>
+                        <li>Security vulnerability scanning</li>
+                        <li>User acceptance testing</li>
+                    </ul>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>Launch & Support</h4>
+                    <p>We deploy your solution and provide ongoing maintenance and updates.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long does it take to develop a custom chatbot?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Simple chatbots can be deployed in 2-4 weeks, while more complex solutions with deep learning capabilities typically take 6-8 weeks. The exact timeline depends on your requirements, integration needs, and the complexity of the conversations it needs to handle.</p>
+                </div>
+            </div>
+            
+            <!-- Additional FAQ items would follow here -->
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="careers.html">Careers</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <p>&copy; 2023 Flovvnetic.io. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const toggle = question.querySelector('.faq-toggle');
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    toggle.textContent = '+';
+                } else {
+                    answer.style.display = 'block';
+                    toggle.textContent = '-';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
